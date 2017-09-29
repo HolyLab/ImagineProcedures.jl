@@ -8,5 +8,5 @@ An `ImagineProcedure` is a formal way of linking a particular set of microscope 
 
 Currently Imagine runs "offline", meaning that microscope recordings cannot be planned, run, and analyzed within the same script.  Instead we store command file and result files when sending information two and from Imagine, respectively.  Thus running an ImagineProcedure is a three-step process:
  1. Generate commands with `outputs(p::ImagineProcedure)` and save them to a file.
- 2. Load the file in Imagine and and perform the recording.
+ 2. Load the file in Imagine and perform the recording.
  3. Load the output files from Imagine and the procedure's analysis function with `process(p::ImagineProcedure, args...)`.  Currently there are no constraints on what arguments may be passed to the procedure's analysis function, but typically they will include acquired images and/or other hardware signals recorded by Imagine.
