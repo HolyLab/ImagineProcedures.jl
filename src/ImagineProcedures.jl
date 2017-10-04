@@ -1,11 +1,12 @@
 module ImagineProcedures
 
-using Unitful
+using Unitful, Reexport
 
 using ImagineInterface
 
-using CachedCalls
-import CachedCalls.CachedCall
+@reexport using CachedCalls
+import CachedCalls: CachedCall, description
+
 
 export SignalGenerator,
         ImagineProcedure,
@@ -36,5 +37,12 @@ analyze_function(ip::ImagineProcedure) = ip.analyze
 
 outputs(ip::ImagineProcedure) = call!(signal_generator(ip))
 process(ip::ImagineProcedure, inputs...) = analyze_function(ip)(outputs(ip), inputs...)
+
+function Base.show(s::IO, p::ImagineProcedure)
+    write(s, "ImagineProcedure")
+    write(s, "\nDescription:                    $(description(p))")
+    write(s, "\nSignalGenerator description:    $(description(signal_generator(p)))")
+    write(s, "\nAnalysis function:              $(analyze_function(p))")
+end
 
 end # module
