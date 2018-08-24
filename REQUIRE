@@ -1,3 +1,3 @@
 julia 0.6
-Unitful
-Reexport
+Unitful 0.8.0 0.8.0+
+Reexport 0.1.0 0.1.0+
