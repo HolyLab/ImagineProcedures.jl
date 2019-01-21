@@ -1,0 +1,15 @@
+name = "ImagineProcedures"
+uuid = "43b7f2cc-1a9d-11e9-093e-178b9f97357d"
+version = "0.1.0"
+
+[deps]
+CachedCalls = "b89da37c-15e8-11e9-0b03-ab0995a60613"
+ImagineInterface = "a9d8408c-0fb1-11e9-0067-cb067474114e"
+Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
