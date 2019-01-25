@@ -15,7 +15,7 @@ export SignalGenerator,
 
 #This is just a CachedCall with a Vector{ImagineSignal} return type
 const SignalGenerator{F, A} = CachedCall{F, A, Vector{ImagineSignal}}
-SignalGenerator(description::String, f::F, args::A) where {F<:Function, A} = SignalGenerator{F, A}(description, f, args, Nullable{Vector{ImagineSignal}}())
+SignalGenerator(description::String, f::F, args::A) where {F<:Function, A} = SignalGenerator{F, A}(description, f, args, nothing)
 SignalGenerator(f::F, args::A) where {F<:Function, A} = SignalGenerator("", f, args)
 
 #An ImagineProcedure couples a function for generating command signals with a function for analyzing those commands in the context of something else.
